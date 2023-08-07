@@ -1,0 +1,34 @@
+<h2>Reactive Form Validation with Getvalue+ SetValue + PatchValue +Reset :</h2>
+
+<form [formGroup]="loginForm" >
+    <div>
+        <label for="username">Username :</label>
+        <input type="text" id="username" formControlName="username">
+        <div *ngIf="loginForm.controls['username'].invalid && loginForm.controls['username'].touched">Username is Required </div>
+      </div><br>
+
+    <div>
+      <label for="email">Email :</label>
+      <input type="email" id="email" formControlName="email">
+      <div *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched" class="error">Email Is required
+        <!-- <div *ngIf="loginForm.controls['email'].errors.required">Email is required</div>
+        <div *ngIf="loginForm.controls['email'].errors.email">Please enter a valid email</div> -->
+      </div>
+    </div><br>
+  
+    <div>
+      <label for="password">Password :</label>
+      <input type="password" id="password" formControlName="password">
+      <div *ngIf="loginForm.controls['password'].errors && loginForm.controls['password'].touched" class="error">Password is required
+        <!-- <div *ngIf="loginForm.controls['password'].errors.required">Password is required</div>
+        <div *ngIf="loginForm.controls['password'].errors.minlength">Password should be at least 6 characters long</div> -->
+      </div>
+    </div><br>
+  
+    <button type="submit" (click)="postData ()" [disabled]="loginForm.invalid">Login</button>&nbsp;&nbsp;
+<button type="submit" class="btn btn-success" (click)="setData ()">Set Value</button>&nbsp;&nbsp;
+
+    <button type="reset" (click)="resetForm ()" class="btn btn-primary">Reset</button>
+  </form>
+  
+

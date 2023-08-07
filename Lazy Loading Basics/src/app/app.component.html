@@ -1,0 +1,13 @@
+<h2>LazyLoading of Component :</h2>
+
+<!-- ** To write Data on Top of browser use below method of ng Template : -->
+<ng-template *ngIf="userlist" [ngComponentOutlet]="userlist | async"></ng-template>
+
+<!-- For Lazy Loading of Component Normally by Button: -->
+
+<label>AdminList Component :</label>
+<button (click)="loadAdmin()">Load Admin List</button>
+<br><br>
+<label>UserList Component :</label>
+<button (click)="loadUser()">Load User List</button>
+

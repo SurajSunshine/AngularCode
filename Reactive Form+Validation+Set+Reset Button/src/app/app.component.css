@@ -1,0 +1,16 @@
+input {
+    width: 200px;
+    border-radius: 5px;
+}
+
+input.ng-invalid.ng-touched  {
+    border-left: 5px solid red;
+}
+
+input.ng-valid {
+    border-left: 5px solid green;
+}
+.error {
+    color: red;
+}
+

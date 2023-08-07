@@ -1,0 +1,27 @@
+
+<!-- *** ADD Validation in Angular Form *** -->
+<h2>ADD Validation in Angular Form</h2>
+
+<div class="col-sm-6">
+
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+
+  <div class="form-group">
+    <label for="email1">Email address</label>
+    <input type="email" required  class="form-control"   name="useremail" ngModel #email="ngModel" placeholder="Enter email">
+   
+  </div>
+   
+  <span *ngIf="email.invalid && email.touched"
+  class="error">Email field cannot be empty</span>
+
+  <div class="form-group">
+    <label for="Password1">Password</label>
+    <input type="password" required class="form-control" name="password" ngModel placeholder="Password">
+  </div>
+  
+  <br>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</div>
