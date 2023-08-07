@@ -1,0 +1,40 @@
+<h2>Reactive Form : </h2>
+<form [formGroup]="loginForm" >
+  <div>
+      <label for="username">Username :</label>
+      <input type="text" id="username" formControlName="username">
+      <div *ngIf="loginForm.controls['username'].invalid && loginForm.controls['username'].touched">Username is Required </div>
+    </div><br>
+
+  <div>
+    <label for="email">Email :</label>
+    <input type="email" id="email" formControlName="email">
+    <div *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched" class="error">Email Is required
+ 
+    </div>
+  </div><br>
+
+  <div>
+    <label for="password">Password :</label>
+    <input type="password" id="password" formControlName="password">
+    <div *ngIf="loginForm.controls['password'].errors && loginForm.controls['password'].touched" class="error">Password is required
+
+    </div>
+  </div><br>
+
+  <button type="submit" (click)="postData ()">Login</button>
+
+  <h2>Get API Data :</h2>
+  <table border="1">
+    <tr>
+        <td>Id</td>
+        <td>Title</td>
+        <td>User Id</td>
+    </tr>
+    <tr *ngFor="let item of data">
+        <td >{{item.id}}</td>
+        <td>{{item.title}}</td>
+        <td>{{item.userId}}</td>
+    </tr>
+</table>
+
